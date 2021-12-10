@@ -4,18 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using PlaneSpotterBackEnd.Models.DatabaseContext;
 using PlaneSpotterBackEnd.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PlaneSpotterBackEnd
 {
     public class Startup
     {
+        private string allowSpecificOrigins = "allowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,6 +23,7 @@ namespace PlaneSpotterBackEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options => { options.AddPolicy(allowSpecificOrigins, builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }); });
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IDataRepositoryWrapper, DataRepositoryWrapper>();
@@ -41,6 +38,8 @@ namespace PlaneSpotterBackEnd
             }
 
             app.UseRouting();
+
+            app.UseCors(allowSpecificOrigins);
 
             app.UseAuthorization();
 
