@@ -1,0 +1,1041 @@
+{
+	"info": {
+		"_postman_id": "2ae1c1ab-ae81-4d49-a33e-96df0e2f7d4d",
+		"name": "PlaneSpotterAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserRoles",
+			"item": [
+				{
+					"name": "Initiate Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/role/initiate_roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"role",
+								"initiate_roles"
+							]
+						},
+						"description": "Initiate basic user roles\r\n\r\nWill create Admin and Spotter UserRoles with role code AD and SP"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create New Spotter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\" : \"Potter\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:13946/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create New Spotter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Potter\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:13946/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Location",
+									"value": "artistInstrumentResponse"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Dec 2021 17:57:11 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"result\": {\n        \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n        \"name\": \"Potter\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:13946/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Dec 2021 17:59:52 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n        \"name\": \"Potter\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AircraftTypes",
+			"item": [
+				{
+					"name": "Create new aircraft type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Make\" : \"Boeing\",\r\n    \"Model\" : \"777-300ER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:13946/api/aircrafttype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"aircrafttype"
+							]
+						},
+						"description": "create new type with Make and Model"
+					},
+					"response": [
+						{
+							"name": "Create new aircraft type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Make\" : \"Boeing\",\r\n    \"Model\" : \"777-300ER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:13946/api/aircrafttype",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"aircrafttype"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Location",
+									"value": "response"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 01:33:56 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"result\": {\n        \"aircraftTypeId\": \"e67602bd-a626-42db-84b6-08d9bb7d218e\",\n        \"make\": \"Boeing\",\n        \"model\": \"777-300ER\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Aircraft Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/aircrafttype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"aircrafttype"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Aircraft Types",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:13946/api/aircrafttype",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"aircrafttype"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 01:36:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"aircraftTypeId\": \"e67602bd-a626-42db-84b6-08d9bb7d218e\",\n        \"make\": \"Boeing\",\n        \"model\": \"777-300ER\"\n    },\n    {\n        \"aircraftTypeId\": \"02527865-d07e-4936-84b7-08d9bb7d218e\",\n        \"make\": \"Airbus\",\n        \"model\": \"A380\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Aircraft",
+			"item": [
+				{
+					"name": "Create new aircraft",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"RegistrationId\" : \"G-RNAC\",\r\n    \"AircraftTypeId\" : \"e67602bd-a626-42db-84b6-08d9bb7d218e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:13946/api/aircraft",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"aircraft"
+							]
+						},
+						"description": "Create new aircraft with registration no and type"
+					},
+					"response": [
+						{
+							"name": "Create new aircraft",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"RegistrationId\" : \"G-RNAC\",\r\n    \"AircraftTypeId\" : \"e67602bd-a626-42db-84b6-08d9bb7d218e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:13946/api/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"aircraft"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Location",
+									"value": "response"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 01:40:51 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"result\": {\n        \"registrationId\": \"G-RNAC\",\n        \"aircraftType\": {\n            \"aircraftTypeId\": \"e67602bd-a626-42db-84b6-08d9bb7d218e\",\n            \"make\": \"Boeing\",\n            \"model\": \"777-300ER\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Aircrafts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/aircraft",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"aircraft"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Aircrafts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:13946/api/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"aircraft"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 01:42:41 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"registrationId\": \"G-RNAC\",\n        \"aircraftType\": {\n            \"aircraftTypeId\": \"e67602bd-a626-42db-84b6-08d9bb7d218e\",\n            \"make\": \"Boeing\",\n            \"model\": \"777-300ER\"\n        }\n    },\n    {\n        \"registrationId\": \"QC-TRCSC\",\n        \"aircraftType\": {\n            \"aircraftTypeId\": \"02527865-d07e-4936-84b7-08d9bb7d218e\",\n            \"make\": \"Airbus\",\n            \"model\": \"A380\"\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sightings",
+			"item": [
+				{
+					"name": "Create new aircraft sighting record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"AircraftId\" : \"QC-TRCSC\",\r\n    \"SpotterId\" : \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\r\n    \"DateTime\" : \"2019-10-12T10:30:00\",\r\n    \"Location\" : \"London Gatwick\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:13946/api/sighting",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"sighting"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create new aircraft sighting record",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AircraftId\" : \"QC-TRCSC\",\r\n    \"SpotterId\" : \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\r\n    \"DateTime\" : \"2019-10-12T10:30:00\",\r\n    \"Location\" : \"London Gatwick\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:13946/api/sighting",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"sighting"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Location",
+									"value": "response"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 02:28:46 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"result\": {\n        \"sightingId\": \"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5\",\n        \"aircraft\": {\n            \"registrationId\": \"QC-TRCSC\",\n            \"aircraftType\": {\n                \"aircraftTypeId\": \"02527865-d07e-4936-84b7-08d9bb7d218e\",\n                \"make\": \"Airbus\",\n                \"model\": \"A380\"\n            }\n        },\n        \"spotter\": {\n            \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n            \"name\": \"Potter\"\n        },\n        \"dateTime\": \"2019-10-12T10:30:00\",\n        \"location\": \"London Gatwick\",\n        \"image\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Aircrafts Sightings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/sighting",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"sighting"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Aircrafts Sightings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:13946/api/sighting",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"sighting"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 02:29:57 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"sightingId\": \"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5\",\n        \"aircraft\": {\n            \"registrationId\": \"QC-TRCSC\",\n            \"aircraftType\": {\n                \"aircraftTypeId\": \"02527865-d07e-4936-84b7-08d9bb7d218e\",\n                \"make\": \"Airbus\",\n                \"model\": \"A380\"\n            }\n        },\n        \"spotter\": {\n            \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n            \"name\": \"Potter\"\n        },\n        \"dateTime\": \"2019-10-12T10:30:00\",\n        \"location\": \"London Gatwick\",\n        \"image\": null\n    },\n    {\n        \"sightingId\": \"eba9d645-2e44-45fd-40fb-08d9bb84caa5\",\n        \"aircraft\": {\n            \"registrationId\": \"G-RNAC\",\n            \"aircraftType\": {\n                \"aircraftTypeId\": \"e67602bd-a626-42db-84b6-08d9bb7d218e\",\n                \"make\": \"Boeing\",\n                \"model\": \"777-300ER\"\n            }\n        },\n        \"spotter\": {\n            \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n            \"name\": \"Potter\"\n        },\n        \"dateTime\": \"2021-10-12T10:30:00\",\n        \"location\": \"London Airport\",\n        \"image\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Aircrafts Sightings by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/sighting/d9b03ec4-dd82-4e49-40fa-08d9bb84caa5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"sighting",
+								"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Aircrafts Sightings by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:13946/api/sighting/d9b03ec4-dd82-4e49-40fa-08d9bb84caa5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"sighting",
+										"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 02:30:32 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"sightingId\": \"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5\",\n    \"aircraft\": {\n        \"registrationId\": \"QC-TRCSC\",\n        \"aircraftType\": {\n            \"aircraftTypeId\": \"02527865-d07e-4936-84b7-08d9bb7d218e\",\n            \"make\": \"Airbus\",\n            \"model\": \"A380\"\n        }\n    },\n    \"spotter\": {\n        \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n        \"name\": \"Potter\"\n    },\n    \"dateTime\": \"2019-10-12T10:30:00\",\n    \"location\": \"London Gatwick\",\n    \"image\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update existing aircraft sighting record",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"SightingId\" : \"eba9d645-2e44-45fd-40fb-08d9bb84caa5\",\r\n    \"AircraftId\" : \"G-RNAC\",\r\n    \"SpotterId\" : \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\r\n    \"DateTime\" : \"2021-10-12T10:30:00\",\r\n    \"Location\" : \"London West port\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:13946/api/sighting",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"sighting"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update existing aircraft sighting record",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"SightingId\" : \"eba9d645-2e44-45fd-40fb-08d9bb84caa5\",\r\n    \"AircraftId\" : \"G-RNAC\",\r\n    \"SpotterId\" : \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\r\n    \"DateTime\" : \"2021-10-12T10:30:00\",\r\n    \"Location\" : \"London West port\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:13946/api/sighting",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"sighting"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 02:33:14 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"result\": {\n        \"sightingId\": \"eba9d645-2e44-45fd-40fb-08d9bb84caa5\",\n        \"aircraft\": {\n            \"registrationId\": \"G-RNAC\",\n            \"aircraftType\": {\n                \"aircraftTypeId\": \"e67602bd-a626-42db-84b6-08d9bb7d218e\",\n                \"make\": \"Boeing\",\n                \"model\": \"777-300ER\"\n            }\n        },\n        \"spotter\": {\n            \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n            \"name\": \"Potter\"\n        },\n        \"dateTime\": \"2021-10-12T10:30:00\",\n        \"location\": \"London West port\",\n        \"image\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Aircrafts Sightings by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/sighting/d9b03ec4-dd82-4e49-40fa-08d9bb84caa5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"sighting",
+								"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Aircrafts Sightings by ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:13946/api/sighting/d9b03ec4-dd82-4e49-40fa-08d9bb84caa5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"sighting",
+										"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 02:36:26 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"result\": {\n        \"sightingId\": \"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5\",\n        \"aircraft\": {\n            \"registrationId\": \"QC-TRCSC\",\n            \"aircraftType\": {\n                \"aircraftTypeId\": \"02527865-d07e-4936-84b7-08d9bb7d218e\",\n                \"make\": \"Airbus\",\n                \"model\": \"A380\"\n            }\n        },\n        \"spotter\": {\n            \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n            \"name\": \"Potter\"\n        },\n        \"dateTime\": \"2019-10-12T10:30:00\",\n        \"location\": \"London Gatwick\",\n        \"image\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Upload Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": "/C:/Users/Buddhi/Downloads/plane.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:13946/api/image/upload/sightings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"image",
+								"upload",
+								"sightings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload Image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "File",
+											"type": "file",
+											"src": "/C:/Users/Buddhi/Downloads/plane.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:13946/api/image/upload/sightings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"image",
+										"upload",
+										"sightings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Dec 2021 03:02:21 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "http://localhost:13946/api/image/sightings/04bfb1ed-03a2-4f9b-9db2-4eaf83948a79_plane.jpg"
+						}
+					]
+				},
+				{
+					"name": "Get Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/image/sightings/04bfb1ed-03a2-4f9b-9db2-4eaf83948a79_plane.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"image",
+								"sightings",
+								"04bfb1ed-03a2-4f9b-9db2-4eaf83948a79_plane.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
