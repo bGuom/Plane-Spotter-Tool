@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace PlaneSpotterBackEnd.Models.Database
+namespace PlaneSpotterBackEnd.Models.Request
 {
     /*
      * Aircraft Type binding model to create AircraftType entity

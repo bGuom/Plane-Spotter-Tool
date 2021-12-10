@@ -25,6 +25,9 @@ namespace PlaneSpotterBackEnd.Models.Database
         [Required]
         public DateTime DateTime { get; set; }
 
+        [Required]
+        public string Location { get; set; }
+
         public string Image { get; set; }
     }
 }

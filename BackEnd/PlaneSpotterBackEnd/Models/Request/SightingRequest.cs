@@ -11,13 +11,16 @@ namespace PlaneSpotterBackEnd.Models.Request
         public Guid SightingId { get; set; }
 
         [Required]
-        public Guid AircraftId { get; set; }
+        public string AircraftId { get; set; }
 
         [Required]
         public Guid SpotterId { get; set; }
 
         [Required]
         public DateTime DateTime { get; set; }
+
+        [Required]
+        public string Location { get; set; }
 
         public string Image { get; set; }
     }

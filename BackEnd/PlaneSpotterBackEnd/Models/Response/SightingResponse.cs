@@ -8,6 +8,7 @@ namespace PlaneSpotterBackEnd.Models.Response
         public AircraftResponse Aircraft { get; set; }
         public UserResponse Spotter { get; set; }
         public DateTime DateTime { get; set; }
+        public string Location { get; set; }
         public string Image { get; set; }
     }
 }

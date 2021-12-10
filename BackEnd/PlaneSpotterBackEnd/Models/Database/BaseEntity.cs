@@ -5,6 +5,10 @@
     */
     public abstract class BaseEntity
     {
+        public BaseEntity()
+        {
+            IsDeleted = false;
+        }
         public bool IsDeleted { get; set; }
     }
 }
