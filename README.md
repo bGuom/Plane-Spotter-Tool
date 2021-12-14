@@ -26,6 +26,12 @@ and running it.
 * Add photo of aircraft (when adding or editing, or both).
 * Search for aircraft by Make, Model or Registration (present a filtered list).
 
+# Implementation
+I followed a client-server model approach with REST API as the backend and MVVM frontend,  Following its requirements, I chose .NET Core 3.1 Web API, SQL Server Express with Entity Framework Core for the backend implementation. And chose HTML, Boostrap and Knockout JS for the frontend implementation.
+
+# Future Improvements
+Implement proper authentication mechanism and server side pagination
+
 # DEMO
 https://user-images.githubusercontent.com/32662218/146035324-2ff19865-b901-4781-ac10-79119755fd76.mp4
 
