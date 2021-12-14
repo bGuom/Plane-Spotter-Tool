@@ -898,6 +898,120 @@
 							"body": "{\n    \"status\": 200,\n    \"result\": {\n        \"sightingId\": \"d9b03ec4-dd82-4e49-40fa-08d9bb84caa5\",\n        \"aircraft\": {\n            \"registrationId\": \"QC-TRCSC\",\n            \"aircraftType\": {\n                \"aircraftTypeId\": \"02527865-d07e-4936-84b7-08d9bb7d218e\",\n                \"make\": \"Airbus\",\n                \"model\": \"A380\"\n            }\n        },\n        \"spotter\": {\n            \"userId\": \"59f8abea-7030-4fd8-58c3-08d9bb3d52b1\",\n            \"name\": \"Potter\"\n        },\n        \"dateTime\": \"2019-10-12T10:30:00\",\n        \"location\": \"London Gatwick\",\n        \"image\": null\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Filter Aircrafts Sightings with Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:13946/api/sighting/filter?make=Boeing&model=777-300ER&registration=G-RNAC&page=1&per_page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "13946",
+							"path": [
+								"api",
+								"sighting",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "make",
+									"value": "Boeing"
+								},
+								{
+									"key": "model",
+									"value": "777-300ER"
+								},
+								{
+									"key": "registration",
+									"value": "G-RNAC"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Filter Aircrafts Sightings by one or many of following fields\r\n\r\nMake,Model,Registration\r\n\r\nPaginate result with \r\nPage,Per_Page"
+					},
+					"response": [
+						{
+							"name": "Filter Aircrafts Sightings with Pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:13946/api/sighting/filter?make=Boeing&model=777-300ER&registration=G-RNAC&page=1&per_page=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "13946",
+									"path": [
+										"api",
+										"sighting",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "make",
+											"value": "Boeing"
+										},
+										{
+											"key": "model",
+											"value": "777-300ER"
+										},
+										{
+											"key": "registration",
+											"value": "G-RNAC"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Dec 2021 14:29:52 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"sightingId\": \"eba9d645-2e44-45fd-40fb-08d9bb84caa5\",\n        \"aircraft\": {\n            \"registrationId\": \"G-RNAC\",\n            \"aircraftType\": {\n                \"aircraftTypeId\": \"e67602bd-a626-42db-84b6-08d9bb7d218e\",\n                \"make\": \"Boeing\",\n                \"model\": \"777-300ER\"\n            }\n        },\n        \"spotter\": null,\n        \"dateTime\": \"2021-10-12T10:30:00\",\n        \"location\": \"London Airport\",\n        \"image\": null\n    }\n]"
+						}
+					]
 				}
 			]
 		},
@@ -917,12 +1031,7 @@
 									"type": "file",
 									"src": "/C:/Users/Buddhi/Downloads/plane.jpg"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:13946/api/image/upload/sightings",
