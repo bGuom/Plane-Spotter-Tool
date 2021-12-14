@@ -34,6 +34,46 @@ function  Spotter(data) {
 
 const SightingViewModel = {
     allSightings: ko.observableArray([]),
+    makeFilter : ko.observable(),
+    modelFilter : ko.observable(),
+    registrationFilter : ko.observable(),
+    pageFilter : ko.observable(),
+    perPageFilter : ko.observable(),
+
+    getFilteredRecords : function() {
+		console.log(SightingViewModel.makeFilter());
+		console.log(SightingViewModel.modelFilter());
+		var URL_PATH = FILTER_AIRCRAFT_SIGHTINGS + "?";
+		if(SightingViewModel.makeFilter() != undefined) {
+			URL_PATH = URL_PATH + "make=" + SightingViewModel.makeFilter() + "&";
+		}
+		if(SightingViewModel.modelFilter() != undefined) {
+			URL_PATH= URL_PATH + "model=" + SightingViewModel.modelFilter() + "&";
+			console.log(URL_PATH);
+		}
+		if(SightingViewModel.registrationFilter() != undefined) {
+			URL_PATH = URL_PATH + "registration=" + SightingViewModel.registrationFilter() + "&";
+		}
+		if(SightingViewModel.pageFilter() != undefined) {
+			URL_PATH = URL_PATH + "page=" + SightingViewModel.pageFilter() + "&";
+		}
+		if(SightingViewModel.perPageFilter() != undefined) {
+			URL_PATH = URL_PATH + "per_page=" + SightingViewModel.perPageFilter();
+		}
+        $.ajax({
+            url:URL_PATH,
+            type:"GET",
+            success: function(data){
+                let mappedRecords = $.map(data, function(item) { return new Sighting(item) });
+                SightingViewModel.allSightings(mappedRecords);
+                console.log(mappedRecords)
+            },
+            fail: function(data){
+                console.log(data);
+            }
+        })
+    },
+
     getAllRecords : function() {
         $.ajax({
             url:GET_AIRCRAFT_SIGHTINGS,

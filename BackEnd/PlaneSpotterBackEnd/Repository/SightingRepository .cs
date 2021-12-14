@@ -41,6 +41,7 @@ namespace PlaneSpotterBackEnd.Repository
         public IQueryable<Sighting> FindAll()
         {
             return dbContext.Sightings
+                .Include(sighting => sighting.Spotter)
                 .Include(sighting => sighting.Aircraft)
                 .ThenInclude(aircraft => aircraft.AircraftType)
                 .Where(sighting => !sighting.IsDeleted);
