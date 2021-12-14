@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Aircraft</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Plane Spotter Tool</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="../sightings/view/index.html">Sightings</a></li>
+                <li><a href="../sightings/create/index.html">New Sighting</a></li>
+                <li class="active"><a href="../sightings/../aircraft/index.html">New Aircraft</a></li>
+                <li><a href="../sightings/../aircraft/type/index.html">New Aircraft Type</a></li>
+            </ul>
+        </div>
+    </nav>
+</head>
+<body>
+<div class="container">
+    <h2>Create New Aircraft</h2>
+    <form>
+        <div class="form-group">
+            <label for="type">Select Type :</label>
+            <select class="form-control" id="type" data-bind="options: availableAircraftTypes,
+                   optionsText: 'FormattedAircraftType',
+                   value: selectedType">
+            </select>
+            <p class="text-danger" for="type" data-bind="text: typeError"></p>
+        </div>
+        <div class="form-group">
+            <a href="type/index.html" class="btn btn-default btn-rounded mb-4" >Add New Type</a>
+        </div>
+        <div class="form-group">
+            <label for="registration">Registration No:</label>
+            <input type="text" class="form-control" id="registration" placeholder="Enter Registration" name="registration" data-bind="value: registration">
+            <p class="text-danger" for="registration" data-bind="text: registrationError"></p>
+        </div>
+        <button type="submit" class="btn btn-default"  data-bind="click: createAircraft">Create</button>
+    </form>
+</div>
+</body>
+
+<script type="text/javascript" src="../assets/js/api_constants.js" ></script>
+<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>

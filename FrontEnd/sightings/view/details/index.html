@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Aircraft Sighting</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Plane Spotter Tool</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="../index.html">Sightings</a></li>
+                <li><a href="../../create/index.html">New Sighting</a></li>
+                <li><a href="../../../aircraft/index.html">New Aircraft</a></li>
+                <li><a href="../../../aircraft/type/index.html">New Aircraft Type</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</head>
+<body>
+<div class="container">
+    <h2>View Aircraft Sighting</h2>
+    <p data-bind="text: sightingId"></p>
+    <hr>
+    <form>
+        <div class="form-group">
+            <label for="spotter">Spotter :</label>
+            <input disabled class="form-control" id="spotter" placeholder="Spotter" name="spotter" data-bind="value: spotter">
+        </div>
+        <div class="form-group">
+            <h3>Aircraft</h3>
+            <hr>
+            <label for="registration">Registration ID :</label>
+            <input disabled class="form-control" id="registration" placeholder="Registration ID" name="registration" data-bind="value: registration">
+            <label for="make">Make :</label>
+            <input disabled class="form-control" id="make" placeholder="Make" name="make" data-bind="value: make">
+            <label for="model">Model :</label>
+            <input disabled class="form-control" id="model" placeholder="Model" name="model" data-bind="value: model">
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input disabled class="form-control" id="location" placeholder="Enter Location" name="location" data-bind="value: location">
+        </div>
+        <div class="form-group">
+            <label for="datetime">Date/Time:</label>
+            <input disabled type="datetime-local" class="form-control" id="datetime" name="datetime" data-bind="value: dateTime" step="2">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="../../../assets/js/api_constants.js" ></script>
+<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>

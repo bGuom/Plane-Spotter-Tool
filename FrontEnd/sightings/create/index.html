@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Aircraft Sighting</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Plane Spotter Tool</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="../view/index.html">Sightings</a></li>
+                <li class="active"><a href="../create/index.html">New Sighting</a></li>
+                <li><a href="../../aircraft/index.html">New Aircraft</a></li>
+                <li><a href="../../aircraft/type/index.html">New Aircraft Type</a></li>
+            </ul>
+        </div>
+    </nav>
+</head>
+<body>
+    <div class="container">
+        <h2>Record New Aircraft Sighting</h2>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label for="spotter">Select Spotter :</label>
+                <select class="form-control" id="spotter" data-bind="options: allSpotters,
+                           optionsText: 'Name',
+                           value: selectedSpotter">
+                </select>
+                <p class="text-danger" for="spotter" data-bind="text: spotterError"></p>
+            </div>
+            <div class="form-group">
+                <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalNewSpotterForm">Add New Spotter</a>
+            </div>
+            <div class="form-group">
+                <label for="aircraft">Select Aircraft :</label>
+                <select class="form-control" id="aircraft" data-bind="options: allAircraftList,
+                           optionsText: 'RegistrationId',
+                           value: selectedAircraft">
+                </select>
+                <p class="text-danger" for="aircraft" data-bind="text: aircraftError"></p>
+            </div>
+            <div class="form-group">
+                <a href="../../aircraft/index.html" class="btn btn-default btn-rounded mb-4">Add New Aircraft</a>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" class="form-control" id="location" placeholder="Enter Location" name="location" data-bind="value: location">
+                <p class="text-danger" for="location" data-bind="text: locationError"></p>
+            </div>
+            <div class="form-group">
+                <label for="datetime">Date/Time:</label>
+                <input type="datetime-local" class="form-control" id="datetime" name="datetime" data-bind="value: dateTime" step="2">
+                <p class="text-danger" for="datetime" data-bind="text: datetimeError"></p>
+            </div>
+            <button type="submit" class="btn btn-default" data-bind="click: record">Add</button>
+        </form>
+    </div>
+
+    <div class="modal fade" id="modalNewSpotterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Create New Spotter</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <label for="spotter-name">Spotter Name:</label>
+                        <input type="name" id="spotter-name" class="form-control validate" data-bind="value: newSpotterName">
+                        <label class="text-danger" data-error="wrong" data-success="right" for="spotter-name" data-bind="text: newSpotterNameError"></label>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-default" data-bind="click: createNewSpotter">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../assets/js/api_constants.js" ></script>
+    <script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>
