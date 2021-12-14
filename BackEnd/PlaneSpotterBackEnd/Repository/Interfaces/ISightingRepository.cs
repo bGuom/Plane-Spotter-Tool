@@ -1,6 +1,7 @@
 ﻿using PlaneSpotterBackEnd.Models.Database;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PlaneSpotterBackEnd.Repository
@@ -12,6 +13,7 @@ namespace PlaneSpotterBackEnd.Repository
         Sighting Add(Sighting sighting);
         Task<Sighting> Update(Sighting sighting);
         Task<Sighting> Delete (Sighting sighting);
+        IQueryable<Sighting> FindAll();
 
 
     }

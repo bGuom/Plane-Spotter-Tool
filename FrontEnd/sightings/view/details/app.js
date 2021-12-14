@@ -40,6 +40,7 @@ const SightingViewModel = {
     model : ko.observable(),
     location : ko.observable(),
     dateTime : ko.observable(),
+    photoUrl: ko.observable(),
 
     getCurrentRecord : function () {
         let page_url = window.location.href;
@@ -61,6 +62,7 @@ const SightingViewModel = {
                 SightingViewModel.model(mappedRecord.Aircraft.AircraftType.Model);
                 SightingViewModel.location(mappedRecord.Location);
                 SightingViewModel.dateTime(mappedRecord.DateTime);
+                SightingViewModel.photoUrl(mappedRecord.Image);
                 console.log(mappedRecord);
             },
             fail: function(data){

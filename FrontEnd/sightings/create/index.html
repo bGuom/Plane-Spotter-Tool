@@ -59,6 +59,15 @@
                 <input type="datetime-local" class="form-control" id="datetime" name="datetime" data-bind="value: dateTime" step="2">
                 <p class="text-danger" for="datetime" data-bind="text: datetimeError"></p>
             </div>
+            <hr>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input data-bind="event: {change: $root.fileUpload}" type="file" id="image" name="filename" accept=".jpg,.jepg,.png,.gif/">
+                <div width="300px" height="150px">
+                    <img data-bind="attr:{src: photoUrl}" width="100%" height="100%">
+                </div>
+            </div>
+            <hr>
             <button type="submit" class="btn btn-default" data-bind="click: record">Add</button>
         </form>
     </div>

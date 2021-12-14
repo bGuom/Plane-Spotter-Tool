@@ -21,6 +21,40 @@ namespace PlaneSpotterBackEnd.Controllers
 
         }
 
+        // GET api/Sighting/filter?make={make}&model={model}&registration={registration}&page={page}&per_page={per_page}
+        // Get filtered sightings
+        [HttpGet("filter")]
+        public ActionResult<IEnumerable<SightingResponse>> GetFiltered([FromQuery] String make, string model, string registration, int page, int per_page)
+        {
+            List<SightingResponse> sighthingResponse = new List<SightingResponse>();
+
+            IQueryable<Sighting> queryable = dataWrapper.Sightings.FindAll();
+
+            if (make != null && !make.Equals("")) {
+                queryable = queryable.Where(record => record.Aircraft.AircraftType.Make == make);
+            }
+
+            if (model != null && !model.Equals(""))
+            {
+                queryable = queryable.Where(record => record.Aircraft.AircraftType.Model == model);
+            }
+
+            if (registration != null && !registration.Equals(""))
+            {
+                queryable = queryable.Where(record => record.Aircraft.RegistrationId == registration);
+            }
+
+            if (page > 0 && per_page > 0) {
+                queryable = queryable.Skip((page - 1) * per_page).Take(per_page);
+            }
+
+            foreach (var sighting in queryable.ToList())
+            {
+                sighthingResponse.Add(autoMapper.Map<SightingResponse>(sighting));
+            }
+            return Ok(sighthingResponse);
+        }
+
         // GET api/Sighting
         // Get all recorded sightings
         [HttpGet]
