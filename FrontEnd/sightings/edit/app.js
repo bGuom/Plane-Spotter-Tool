@@ -56,6 +56,29 @@ const SightingViewModel = {
     datetimeError : ko.observable(),
     newSpotterName : ko.observable(),
     newSpotterNameError : ko.observable(),
+    photoUrl : ko.observable(),
+
+    fileUpload : function(data, e)
+    {
+        var file    = e.target.files[0];
+        //Upload Image
+        if(file)
+        {
+            var formData = new FormData();
+            // Attach file
+            formData.append('File', file);
+            $.ajax({
+                url: POST_IMAGE,
+                data: formData,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function(data){
+                    SightingViewModel.photoUrl(data);
+                }
+            });
+        }
+    },
 
     createNewSpotter : function() {
         if(this.newSpotterName() !== undefined){
@@ -97,10 +120,13 @@ const SightingViewModel = {
             type:"GET",
             success: function(data){
                 let mappedRecord =  new SightingData(data);
-                SightingViewModel.selectedSpotter(mappedRecord.Spotter);
-                SightingViewModel.selectedAircraft(mappedRecord.Aircraft);
+		let spotter = SightingViewModel.allSpotters().find(x => x.UserId === mappedRecord.Spotter.UserId);
+                SightingViewModel.selectedSpotter(spotter);
+		let aircraft = SightingViewModel.allAircraftList().find(x => x.RegistrationId === mappedRecord.Aircraft.RegistrationId);
+                SightingViewModel.selectedAircraft(aircraft);
                 SightingViewModel.location(mappedRecord.Location);
                 SightingViewModel.dateTime(mappedRecord.DateTime);
+                SightingViewModel.photoUrl(mappedRecord.Image);
                 console.log(mappedRecord);
             },
             fail: function(data){
@@ -183,7 +209,7 @@ const SightingViewModel = {
         $.ajax({
             url:PUT_AIRCRAFT_SIGHTINGS,
             type:"PUT",
-            data:JSON.stringify(new Sighting(id,this.selectedSpotter().UserId,this.selectedAircraft().RegistrationId,this.dateTime(),this.location(),"")),
+            data:JSON.stringify(new Sighting(id,this.selectedSpotter().UserId,this.selectedAircraft().RegistrationId,this.dateTime(),this.location(),this.photoUrl())),
             contentType:"application/json; charset=utf-8",
             dataType:"json",
             success: function(data){

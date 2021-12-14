@@ -13,3 +13,5 @@ const GET_AIRCRAFT_SIGHTINGS= API_BASE + "api/sighting"
 const DELETE_AIRCRAFT_SIGHTINGS= API_BASE + "api/sighting"
 const POST_AIRCRAFT_SIGHTINGS= API_BASE + "api/sighting"
 const PUT_AIRCRAFT_SIGHTINGS= API_BASE + "api/sighting"
+
+const POST_IMAGE = API_BASE + "api/image/upload/sightings"
