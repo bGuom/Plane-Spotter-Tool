@@ -25,3 +25,7 @@ and running it.
 * Edit details of an aircraft sighting.
 * Add photo of aircraft (when adding or editing, or both).
 * Search for aircraft by Make, Model or Registration (present a filtered list).
+
+# DEMO
+https://user-images.githubusercontent.com/32662218/146035324-2ff19865-b901-4781-ac10-79119755fd76.mp4
+
