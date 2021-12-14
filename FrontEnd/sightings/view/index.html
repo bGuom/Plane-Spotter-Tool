@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Aircraft Sightings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Plane Spotter Tool</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Sightings</a></li>
+                <li><a href="../create/index.html">New Sighting</a></li>
+                <li><a href="../../aircraft/index.html">New Aircraft</a></li>
+                <li><a href="../../aircraft/type/index.html">New Aircraft Type</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Aircraft Sightings</h2>
+
+        <hr>
+        <div class="form-group">
+            <a href="../create/index.html" class="btn btn-default btn-rounded mb-4" >Add New Sighting</a>
+        </div>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Registration</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Spotter</th>
+                <th>Location</th>
+                <th>Date/Time</th>
+            </tr>
+            </thead>
+            <tbody data-bind="foreach: allSightings">
+            <tr>
+                <td data-bind="text: Aircraft.RegistrationId"></td>
+                <td data-bind="text: Aircraft.AircraftType.Make"></td>
+                <td data-bind="text: Aircraft.AircraftType.Model"></td>
+                <td data-bind="text: Spotter.Name"></td>
+                <td data-bind="text: Location"></td>
+                <td data-bind="text: DateTime"></td>
+                <td><a href="#" data-bind="click: $root.view">View</a></td>
+                <td><a href="#" data-bind="click: $root.edit">Edit</a></td>
+                <td><a href="#" data-bind="click: $root.delete">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script type="text/javascript" src="../../assets/js/api_constants.js" ></script>
+    <script type="text/javascript" src="app.js" ></script>
+</body>
+</html>
