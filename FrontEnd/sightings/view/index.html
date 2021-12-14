@@ -33,6 +33,34 @@
             <a href="../create/index.html" class="btn btn-default btn-rounded mb-4" >Add New Sighting</a>
         </div>
         <hr>
+        <h3>Filter Records</h3>
+        <div class="row">
+            <div class="col-sm-1 col-md-3 col-lg-4 col-xl-5">
+                <label for="make">Make:</label>
+                <input type="text" class="form-control" id="make" name="make" data-bind="value: makeFilter">
+            </div>
+            <div class="col-sm-1 col-md-3 col-lg-4 col-xl-5">
+                <label for="make">Model:</label>
+                <input type="text" class="form-control" id="model" name="model" data-bind="value: modelFilter">
+            </div>
+            <div class="col-sm-1 col-md-3 col-lg-4 col-xl-5">
+                <label for="make">Registration ID:</label>
+                <input type="text" class="form-control" id="registration" name="registration" data-bind="value: registrationFilter">
+            </div>
+            <div class="col-sm-1 col-md-3 col-lg-4 col-xl-5">
+                <label for="make">Page:</label>
+                <input type="number" class="form-control" id="page" name="page" data-bind="value: pageFilter">
+            </div>
+            <div class="col-sm-1 col-md-3 col-lg-4 col-xl-5">
+                <label for="make">Per Page:</label>
+                <input type="number" class="form-control" id="perPage" name="perPage" data-bind="value: perPageFilter">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default"  data-bind="click: getFilteredRecords">Filter Sightings</button>
+        </div>
+        <hr>
         <table class="table table-striped">
             <thead>
             <tr>
